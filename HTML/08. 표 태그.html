@@ -1,0 +1,57 @@
+<!-- 
+Keyword: tr, td, th
+github 11.html 
+-->
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <table bodrder>
+      <tr>
+        <th>국어</th>
+        <th>영어</th>
+        <th>수학</th>
+      </tr>
+      <tr>
+        <td>100점 이상</td>
+        <td>90점 이상</td>
+        <td>95점 이상</td>
+      </tr>
+      <tr>
+        <td>1등</td>
+        <td>3등</td>
+        <td>2등</td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+<table border="5">
+  <tr>
+    <th width="130">cell</th>
+    <th colspan="2" width="130">colspan=2</th>
+  </tr>
+  <tr>
+    <td rowspan="2"><pre>   Hello      </pre></td>
+    <td colspan="3"><pre>   안녕       </pre></td>
+    <td align="center">cell</td>
+    <td align="left">cell</td>
+    <td align="right">cell</td>
+  </tr>
+</table>
+<!-- 
+=== 정리 ===
+  1. table을 만들기 위해 최초 table 태그를 작성
+  2. 열 제목은 tr
+  3. 하단에 열 내역(행)(데이터) 는 td로 작성
+  4. tr > th // tr > td 구성 가능
+  〓 table > tr > td 순서
+  ex. 5행 6열 => tr에 td 6개 순으로 5세트 로 만든다.
+
+=== 정리: 표 설정 ===
+  1. rowspan: 합칠 행의 개수를 써서 행 병합 가능
+  2. colspan: 행질 열의 개수를 써서 열 병합 가능
+  3. th width : 표의 너비 설정
+  4. th colspan: 표의 열 너비 설정
+-->

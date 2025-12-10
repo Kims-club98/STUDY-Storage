@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>예제 13 img태그(3)</title>  
+  </head>
+  <body>
+    <div align="center">
+      <h1>visto</h1>
+      <img src="image/다운로드.jpg" alt="숲 이미지" border="1" usemap="#img">
+      <figcaption>자연의 아름다움을 감상하세요!</figcaption>
+    </div>
+    <map name="img">
+      <area shape="circle" coords="50,50,50" href="image/바다.jpg" alt="바다 이미지" target="_blank">
+    </map>
+
+  </body>
+</html>
+
+<!-- 
+  == 정리 ==
+    1. figcaption
+      그림 하단에 설명글을 넣을 수 있음(캡션 느낌)
+      
+    2. target: 링크, 폼이 열릴 위치를 지정하는 속성
+      _self: 현재창/프레임에서 열기(default, 생략가능)
+      _blacnk: 새창/탭에서 열기
+      _parent: 부모 프레임에서 열기
+      _top: 최상위 창에서 열기(프레임 탈출)
+
+-->

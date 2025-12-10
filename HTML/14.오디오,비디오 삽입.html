@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>예제 14: embed tag</title>
+  </head>
+  <center>
+    제목은 <i>Love me</i>입니다.
+    <embed src="etc/이루마-Love.mp3" align="center" width="150" height="50">
+  </center>
+
+  <audio src="etc/이루마-Love.mp3"></audio>
+  <video src="etc/놀이.mp4"></video>
+</html>
+
+<!-- 
+  == 정리 ==
+  1. embed: 오디오 파일을 삽입 가능한 태그
+    src: 멀티미디어의 위치 기입
+    width: 플레이어의 너비
+    height: 플레이어의 높이
+
+  2. audio, video: 오디오 파일과, 비디오 파일 삽입 가능.
+    태그 속성
+    controls: 화면에 컨트롤바 설치
+    autoplay: 자동 재생
+    loop: 반복 재생
+    muted: 소리를 제거함
+    preload: 페이지를 어떻게 로딩 시 지정(default: auto) > metadata / none
+    poster="파일명": 재생되기 전까지 표시될 이미지를 지정
+-->
