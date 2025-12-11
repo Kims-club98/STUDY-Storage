@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>예제 22. 폼 실전-회원가입 페이지</title>
+  </head>
+  <body>
+    <h1>회원 가입</h1>
+    <fieldset>
+      <legend>사용자 정보</legend>
+      <ul>
+        <li>
+          <label for="user_id"
+            >아이디
+            <input type="text" id="user_id" placeholder="아이디 입력" />
+          </label>
+        </li>
+        <li>
+          <label for="user_pw"
+            >비밀번호<input
+              type="password"
+              name="user_pw"
+              id="user_pw"
+              placeholder="패스워드를 입력하시오"
+          /></label>
+        </li>
+        <li>
+          <label for="user_email"
+            >이메일
+            <input type="email" placeholder="이메일 작성" id="user_id" />
+          </label>
+        </li>
+        <li>
+          <label for="user_re_password"
+            >비밀번호 확인
+            <input
+              type="password"
+              id="user_re_password"
+              placeholder="이메일 재 작성"
+            />
+          </label>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>이벤트 수식 동의 여부</legend>
+      <font size="3">
+        <label for="agree"
+          >동의합니다:<input type="radio" name="mailing" id="mailing_y"
+        /></label>
+        <label for="agree"
+          >동의하지않지만 받겠습니다.:<input
+            type="radio"
+            name="mailing"
+            id="mailing_n"
+        /></label>
+      </font>
+    </fieldset>
+  </body>
+</html>
+
+<!-- 
+== 정리 ==
+  1. 이벤트 동의 여부 yes no 의 name을 동일하게 하는 이유
+    둘 중 하나를 선택하는 action을 위해서 같은 name으로 연결해야
+    하나만 선택하게 이끌 수 있음.
+-->

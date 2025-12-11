@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>예제 18. 폼 태그(1)</title>
+  </head>
+    <form action="" name="test1" method="post" target="">
+
+    </form>  
+
+  </body>
+</html>
+
+<!-- 
+  == 정리: form 의 속성 ==
+  1. action: 태그 내 처리해줄 서버 프로그램 지정
+  2. name: 이름지정(JS에서 처리 목적 이름)  
+  2. form: 폼을 만드는 가장 기본적 태그 
+    method: 사용자가 입력한 내용을 서버쪽으로 어떻게 넘길 것인지 결정
+      get: 데이터  256-4096byte
+      post: 길이제한없고, 내용이 드러나지 않음
+  4. target: action 스크립 파일을 현재 창이 다른 창에서 열도록 함
+    _blank
+    _self
+    _parent
+    _top
+  5. autocomplet: 자동완성 기능을 제어
+    on: 자동완성 활성화
+    off: 자동완성 비활성화(보안 시 off)
+    new_password: 신규 비밀번호
+  --> 

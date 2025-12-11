@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>예제17 프레임 태그</title>
+  </head>
+  <iframe width="50%" height="100" border="5">
+    <frame src="/card과제/ic-chat2.png" name="a">
+    <frame src="/card과제/profile-1.png" name="profile" scrolling="yes">
+  </iframe>
+</html>
+
+<!-- 
+  == 정리 ==
+  1. 주의 현재 html5에서 종료됨 => 오늘날 iframe으로 대체
+      -> iframe은 weight / height 로 표기함
+  2. frameset의 속성
+    rows: 프레임을 수직(행으로) 분할(가로) 50% 50%는 상 하 기준 분할 비율을 말함
+    cols: 프레임을 수평(열로) 분할(세로)
+    border: 프레임의 경계선 
+  3. frame의 속성
+    src: url을 불러옴
+    name: 프레임의 이름 지정(링크에 대상, src에서 불러오기 할때 #name 으로 불러옴)
+    noresize: 크기 조절을 방지함
+    scrolling="yes" 시 스크롤바 생김(no는 지움)
+-->
