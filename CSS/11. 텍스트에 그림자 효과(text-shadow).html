@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11. 텍스트에 그림자 효과 부여하기(text-shadow)</title>
+  </head>
+  <style>
+    .html {
+      color: yellowgreen;
+      text-shadow: 1px 1px black; /*텍스트 윤곽선 부여하기;*/
+    }
+    #css {
+      text-shadow: 5px 5px 3px #ffa500; /*텍스트에 그림자 효과 부여*/
+    }
+    .js {
+      color: #fff;
+      text-shadow: 7px 7px 20px #000; /*텍스트에 흐릿한 음영 부여하기*/
+    }
+  </style>
+  <body>
+    <h1 class="html">HTML</h1>
+    <h1 id="css">CSS</h1>
+    <h1 class="js">JavaScript</h1>
+  </body>
+</html>
+
+<!-- 
+  === 정리 ===
+    1. 텍스트에 그림자 효과를 부여하는 속성인 text-shadow이다.
+      속성 순서 > text-shadow( [가로 거리] [세로 거리] [번짐 정도] [색상(그림자 색상)]) 순이다.
+-->

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7.텍스트 관련 스타일</title>
+    <style>
+      /* rgb로 색깔 지정 */
+      #css1 {
+        color: rgb(0, 0, 225);
+      }
+      /* rgba로 불투명도 지정(불투명: 0~1) */
+      #css2 {
+        color: rgba(0, 0, 225, 0.5);
+      }
+      /* 색상 이름으로 글자색 지정하기 */
+      #css3 {
+        color: chartreuse;
+      }
+      /* ---------------------- */
+      #redmandarin1 {
+        text-align: right; /*오른쪽 정렬*/
+      }
+      #redmandarin2 {
+        /*가운데 정렬*/
+        text-align: center;
+      }
+      #redmandarin3 {
+        /*왼쪽 정렬*/
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <p>1. 텍스트 색상 지정하기</p>
+    <h1 id="css1">CSS1</h1>
+    <h1 id="css2">CSS2</h1>
+    <h1 id="css3">CSS3</h1>
+    <br />
+    <p>2. 텍스트 정렬하기</p>
+    <p id="redmandarin1">
+      껍질에 붉은 빛이 돌아 레드향이라고 불린다. 이는 한라봉과 귤을 교배한
+      것이다.
+    </p>
+    <p id="redmandarin2">
+      껍질에 붉은 빛이 돌아 레드향이라고 불린다. 이는 한라봉과 귤을 교배한
+      것이다.
+    </p>
+    <p id="redmandarin3">
+      껍질에 붉은 빛이 돌아 레드향이라고 불린다. 이는 한라봉과 귤을 교배한
+      것이다.
+    </p>
+  </body>
+</html>
+<!-- 
+  === 정리: color ===
+  1. rgb 표기법으로 파란색 지정하기
+    color: rgb(0,0,225) 로 지정
+
+  2. rgba 표기법으로 불투명도 지정
+    color: rgba(0,0,225,0.5)로 지정
+
+  3. text-align 텍스트의 정렬을 지정함
+    left 왼쪽 맞추어 단락 정렬
+    center 가운데 맞추어 단락 정렬
+    right 오른쪽 맞추어 단락 정렬
+    justify 양쪽에 맞추어 단락 정렬
+    match-parent 부모 태그를 따라 단락 정렬
+-->
