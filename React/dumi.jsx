@@ -1,26 +1,24 @@
-import React from 'react'
-
-// 자식 컴포넌트
-function MyComponent (props) {
-  raturn(
-    <>
-      <h2>Props 객체 사용하기</h2>
-      <p>{props.p1}</p>
-      <p>{props.p2}</p>
-      <p>{props.p3}</p>
-      <p>{props.p4}</p>
-    </>
-  )
+function FrontComp(props){
+  const BackComp = ({onMyEvent}) => {
+    return( <>
+      <li><a href="/" onClick={(event) => {
+        event.preventDefault();
+        onMyEvent('백안드 클릭됨(자식전달')
+      }}>백엔드</a></li>
+      <ul>
+        <li>JAVA</li>
+        <li>Oracle</li>
+        <li>MySQL</li>
+      </ul>
+    </>)
+  }
 }
-
-
-// 부모 컴포넌트
-function App () {
-  return (
-    <>
-      <MyComponent p1={'HTML'} p2={'CSS'} p3={'React'} p4={'JavaScript'} />
-    </>
-  )
+function App() {
+  return (<>
+  <h2>React-Event</h2>
+  <BackComp onMyEvent={(msg)=>{
+    alert(msg)
+  }}
+  />
+  </>)
 }
-
-export default dumi
