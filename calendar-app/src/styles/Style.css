@@ -1,0 +1,55 @@
+/* App.jsx  */
+.content-area{
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  flex: 1;
+  overflow: hidden;
+}
+.input-area{
+  flex: 1;           /* 1 비율 */
+  min-width: 250px;  /* 너무 작아지면 글자가 깨지므로 최소 너비 설정 */
+  background-color: #f4f4f4;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.calendar-wrapper{
+  flex: 3;           /* 3 비율 */
+  padding: 10px;
+  background-color: white;
+}
+/* HandlebarPage */
+.Htitle{
+  margin-top: 0.1px;
+  margin-left: 5%;
+}
+
+
+/* Header / Footer */
+.header-bar, .footer-bar {
+  display: flex;
+  align-items: center;    /* 세로 중앙 */
+  justify-content: center; /* 가로 중앙 */
+  background-color: wheat; /*배경 색깔*/
+  width: 100%;
+}
+
+.header-bar {
+  height: 80px;           /* 글자 크기에 맞춰 높이 조절 */
+  font-size: 2.5rem;      /* 원하는 큰 글씨 */
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 3. 푸터 개별 설정: 높이를 낮게, 글씨를 작게 유지합니다. */
+.footer-bar {
+  height: 40px;           /* 슬림한 높이 */
+  font-size: 0.9rem;      /* 작은 글씨 */
+  border-top: 1px solid #ddd;
+  color: #666;
+}
+
+/* ======================================= */
