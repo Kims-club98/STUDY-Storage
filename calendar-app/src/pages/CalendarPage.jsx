@@ -20,8 +20,8 @@ const CalendarPage = ({events, onDateClick, onEventClick}) => {
         center: "title",
         right: "dayGridMonth,timeGridWeek,timeGridDay",
         }}
-        events={events}
-        dateClick={onDateClick}
+        events={events} /* 입력된 값을 전달 */
+        dateClick={onDateClick} /* Modal 창을 띄우는 event */
         eventClick={onEventClick}
         selectable={true}
         />

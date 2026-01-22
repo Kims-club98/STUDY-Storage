@@ -21,7 +21,7 @@ function App () {
       <main className="content-area">
         <div className="input-area">
           {/* 2-1. 좌측: 입력폼 핸들바 */}
-          <HandleBarPage events={events} setEvent={setEvents} />
+          <HandleBarPage events={events} setEvents={setEvents} />
         </div>
         {/* 2-2. 메인 경로에서 CalendarPage를 보여줌 */} 
         <div className="calendar-wrapper"> 

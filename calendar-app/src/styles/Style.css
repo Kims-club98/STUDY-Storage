@@ -6,6 +6,7 @@
   flex: 1;
   overflow: hidden;
 }
+
 .input-area{
   flex: 1;           /* 1 비율 */
   min-width: 250px;  /* 너무 작아지면 글자가 깨지므로 최소 너비 설정 */
@@ -27,6 +28,22 @@
   margin-left: 5%;
 }
 
+
+
+.btn-group{
+display: flex;                /* 1. 가로 배치 모드 켜기 */
+  justify-content: space-between; /* 2. 자식들(버튼) 사이의 공간을 최대로 벌리기 (좌우 끝 정렬) */
+  align-items: center;          /* 3. 버튼들의 높낮이 맞추기 */
+  margin-top: 20px;             /* 4. 위쪽 입력창과의 간격 */
+  width: 100%;                  /* 5. 부모 너비에 가득 차게 설정 */
+}
+
+.confirm-btn, .reset-btn{
+  font-weight: bold;
+  background-color: wheat;
+  width: 130px
+}
+/*==================================*/
 
 /* Header / Footer */
 .header-bar, .footer-bar {
