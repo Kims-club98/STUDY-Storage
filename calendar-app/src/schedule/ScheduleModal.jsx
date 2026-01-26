@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 
-const ScheduleModal = ({show, handleClose, selectDate, onSave}) => {
+const ScheduleModal = ({show, handleClose, selectDate, onSave, initialData}) => {
 // 1. 입력한 폼을 통합하여 관리해줌 (관리를 위한 박스 생성)
   const [formData, setFormData] = useState({
     title:'',
@@ -12,19 +12,25 @@ const ScheduleModal = ({show, handleClose, selectDate, onSave}) => {
   })
 
   //2. 부모에게 날짜 전달 시(달력에서 클릭) 날짜 상태를 업데이트 함(클릭한 날을 시작날짜로...)
-  useEffect(() =>{
+  // if/else를 통해 수정/등록모드를 만듦
+  useEffect(() => {
     if(show){
+      if(initialData){
+        // [수정모드] 부모로부터 받은 데이터로 폼 채우기
+        setFormData({...initialData})
+      
+    }else{
+      // [등록모드] 초기화 및 클릭 날짜로 이동하기
       setFormData({
-        ...formData,
-        startDate: selectDate || '',
-        endDate: selectDate || '',
-        category: "blue",
-        title: '', // 모달 열릴 떄마다 초기화(이후 바꿔주기 - 있는 경우에는 남겨야 함) ***
-        description: '' // 상세 내역 초기화(이후 바꿔주기 - 있는 경우에는 남겨야 함) ***
+        title:'',
+        startDate:selectDate || '',
+        endDate:selectDate || '',
+        category:'blue',
+        description:''
       })
     }
-  }, [show, selectDate])
-
+  }
+  },[show, initialData, selectDate]);
   //3. 입력 값이 변할 때(event - 약칭 e) -> 실행되는 함수
   const handleChange = (e) => {
     const {id, value} = e.target
@@ -33,6 +39,17 @@ const ScheduleModal = ({show, handleClose, selectDate, onSave}) => {
       [id]: value,
     })) 
   } // input 값 변할 때, 그 안의 id/value값을 꺼내서 변수에 담고 기존의 값을 모두 가져와(...prev) id를 key로한 체, 나머지 value값을 가지고 옴을 의미함
+
+  const handleEventClick = (info) => {
+    setFormData({
+      title: info.e.title,
+      startDate: info.e.startDate,
+      endDate: info.e.endDate,
+      category: info.e.category,
+      description: info.e.description
+    })
+    setModelOpen(true)
+  }
 
   //4. 저쟝버튼 클릭 시 호출하기(실행순서 issue 발생함)
   const handleSubmit = () => {
@@ -118,8 +135,8 @@ const ScheduleModal = ({show, handleClose, selectDate, onSave}) => {
         <Button variant="secondary" onClick={handleClose}>
           취소하기
         </Button>
-        <Button variant="warning" onClick={handleSubmit}>
-          등록하기(confirm)
+        <Button variant={initialData ? "success" : "warning"} onClick={handleSubmit}>
+          {initialData ? "수정하기":"등록하기"}
         </Button>
       </Modal.Footer>
     </Modal>
@@ -130,6 +147,6 @@ export default ScheduleModal;
 
 
 // 필요한 사항
-// 등록된 일정을 클릭 시 수정폼을 구현하지 않음
+// 등록된 일정을 클릭 시 수정폼을 구현하지 않음(완료)
 // 수정 폼을 만들 시 삭제 버튼이 만들어 지도록 하지 않음
-// 현재 구현된 것: 등록 폼창, 등록하기(삭제,수정은 구현 x)
+// 현재 구현된 것: 등록 폼창, 등록하기(삭제은 구현 x)
