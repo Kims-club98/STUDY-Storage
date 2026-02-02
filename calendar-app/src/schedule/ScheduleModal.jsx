@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
-
-const ScheduleModal = ({show, handleClose, selectDate, onSave, initialData}) => {
+// ▼ 부모에게서 받은 변수들(자식 노드에서 사용 가능함)
+const ScheduleModal = ({show, handleClose, selectDate, onSave, onDelete, initialData}) => {
 // 1. 입력한 폼을 통합하여 관리해줌 (관리를 위한 박스 생성)
   const [formData, setFormData] = useState({
     title:'',
@@ -51,16 +51,29 @@ const ScheduleModal = ({show, handleClose, selectDate, onSave, initialData}) => 
     setModelOpen(true)
   }
 
-  //4. 저쟝버튼 클릭 시 호출하기(실행순서 issue 발생함)
-  const handleSubmit = () => {
+  //4. 저쟝버튼 클릭 시 호출하기(실행순서 issue 발생함) + firebase에 전달하기
+  const handleSubmit = async() => {
     if(!formData.title.trim() || !formData.startDate || !formData.endDate ) {
       alert("일정제목/시작-종료 날짜를 입력해주세요!")
       return // 함수를 반드시 종료시켜야 onSave가 실행이 가능하다(return 이 없는 것은 종료버튼이 없는 것과 같다...)
     }
   // 5. 부모 컴포넌트(CommonCalendar)의 handleSaveEvent 함수를 실행시킨다...
   onSave(formData)
-
+  handleClose(formData) // 저장 후 닫기
   }
+
+  // 6. 등록을 삭제하기 위한 함수
+  const handleEventDelete = () => {
+    //1. 지울지 여부를 한 번 물어봄
+    if(window.confirm("이 일정을 삭제하겠습니까?")){
+      // 2. 부모에게 받은 setEvents 활용하여 해당 ID만을 필터링 해주어야 한다.
+      onDelete(formData.id);
+      onDelete(formData.id) // 부모에 id 전달해 Firebase에서도 삭제를 요청하게 됨.
+      // 3. 삭제 후 모달창 닫기
+      handleClose();
+    }
+  }
+
   return (
 <Modal show={show} onHide={handleClose} centered size="lg">
       <Modal.Header closeButton>
@@ -112,7 +125,7 @@ const ScheduleModal = ({show, handleClose, selectDate, onSave, initialData}) => 
             >
               <option value="blue">💙 업무일정</option>
               <option value="orange">🧡 중요일정</option>
-              <option value="yellow">💛 개인일정</option>
+              <option value="green">💚 개인일정</option>
               <option value="purple">💜 기타</option>
             </Form.Select>
           </Form.Group>
@@ -132,6 +145,12 @@ const ScheduleModal = ({show, handleClose, selectDate, onSave, initialData}) => 
       </Modal.Body>
 
       <Modal.Footer>
+        {/* 수정 모드일 때만 -> 삭제하기 버튼이 나타나게 하기!! */}
+        {initialData && (
+          <Button variant="danger" onClick={handleEventDelete} className="me-auto">
+            삭제하기
+          </Button>
+        )}
         <Button variant="secondary" onClick={handleClose}>
           취소하기
         </Button>

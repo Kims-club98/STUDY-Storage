@@ -1,3 +1,4 @@
+
 /* App.jsx  */
 .content-area{
   display: flex;
@@ -6,6 +7,8 @@
   flex: 1;
   overflow: hidden;
 }
+
+.fc-event-title { color: black !important; }
 
 .input-area{
   flex: 1;           /* 1 비율 */

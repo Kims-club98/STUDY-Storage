@@ -7,6 +7,7 @@ import Homepage from './pages/Homepage'
 import AtCalendarPage from './pages/AtCalendarPage'
 import JoinPage from './auth/JoinPage'
 import LoginPage from './auth/LoginPage'
+import 'bootswatch/dist/cerulean/bootstrap.min.css'
 
 createRoot(document.getElementById('root')).render( // html의 name root를 랜더링(적용)함
     <>

@@ -5,15 +5,15 @@ import Footer from '../include/Footer'
 import CommonCalendar from '../schedule/CommonCalendar'
 
 
-
 const SchedulePage = () => {
   return (
     <>
       <Header />
-        <main>      
-          <h2>일정관리 Calendar</h2>
-          <CommonCalendar />
-        </main>
+      <main className='bg-light'>      
+        {/* 복잡한 font 태그를 지우고 아래와 같이 수정하세요 */}
+        <h2 style={{textAlign: 'center', fontWeight: '800', fontSize: '3rm'}}>일정관리 Calendar</h2>
+        <CommonCalendar />
+      </main>
       <Footer />
     </>
   )
