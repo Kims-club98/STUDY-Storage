@@ -153,3 +153,45 @@ const [events, setEvents] = useState([])
     - initalData: 수정 시 기존 내용을 채워 둠
     
   ### 4-2. ScheduleModal.jsx 
+  - FullCalendar에서 클릭 시 생기는 모달창을 관리하는 페이지
+
+  #### 매개변수
+  ```jsx
+  const ScheduleModal = ({show, handleClose, selectDate, onSave, onDelete, initialData}) => {
+  ```
+    - 여기에서 오는 매개변수들은 부모인 CommonCalendar가 자손인 SchduleModal을 불러오기 위한(==랜더링) 것들이며 예를 들어 CommonCalendar에서 show 를 클릭 시 ScheduleModal의 ShowModal을 불러오게 된다.
+  
+  #### const [formData, setFormData] = useState (상태관리)
+    - 이벤트 발생 시 (-> 데이터가 변경) 화면을 다시 그리는 것을 의미한다.
+    - 작동원리
+      1. 초기: formData >> 초기 설정값으로 빈칸이다.
+      2. Event 발생 -> 사용자의 배경화면 변경 button 클릭 & 이름 입력
+      3. 변경 명령(setFormDate): 사용자에게 새로운 값으로의 변경을 요청
+      4. 화면 갱신(Re-render): 변경된 값을 확인하고 변경된 값을 눈앞에 보여준다.
+    + 객체( { } ) 사용 시 주의사항
+      - 기존 객체 수정이 아닌 -> 새로운 객체로 바꿔야 함(전개연산자 사용 필요)
+
+  #### UseEffect(() => {...},[show, initialData, selectDate])
+    - UseEffect는 React 모달(창)이 열릴 때 데이터 세팅 *어떻게 세팅될 지 결정*해주는 Logic임
+    
+    if(show)
+    : if(initialData) 만약 기존 데이터이면 된다면
+    -> 기존의 내역을 불러오고 세팅을 한다(setFormData)
+
+    else : 그 외(데이터가 없는 경우)는 다음과 같이 세팅을 한다(등록모드)
+
+    - 맨 뒤의 [show, initalData, selectDate]는 실제로 input 받는 매개변수를 의미함
+
+    cf) 개념 => 와 = 의 차이점
+
+    = (변수를 저장한다)
+    ```js
+    let title = '공부하기'; // title의 상자에 '공부하기'를 담았다
+    ```
+
+    => (행동레시피: 명령이다 -조건 만족 시 -수행)
+    ```js
+    const sayHello = () => {console.log("안녕");};
+    // ()는 실행 sayHello를 실행하면 "안녕"을 출력한다로 이해하면 된다./
+    ```
+    결론: useEffect(()=>{...}) 는 "상황이 변화하면 동작을 수행해라" 라는 의미이다.
