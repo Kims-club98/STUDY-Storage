@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9a20083b0cd33220d9cdbc0c15ec932eda73a841
 /* App.jsx  */
 .content-area{
   display: flex;
@@ -7,6 +11,11 @@
   overflow: hidden;
 }
 
+<<<<<<< HEAD
+=======
+.fc-event-title { color: black !important; }
+
+>>>>>>> 9a20083b0cd33220d9cdbc0c15ec932eda73a841
 .input-area{
   flex: 1;           /* 1 비율 */
   min-width: 250px;  /* 너무 작아지면 글자가 깨지므로 최소 너비 설정 */

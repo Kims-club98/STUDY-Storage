@@ -15,6 +15,11 @@
     "@fullcalendar/react": "^6.1.20",
     "@fullcalendar/timegrid": "^6.1.20",
     "bootstrap": "^5.3.8",
+<<<<<<< HEAD
+=======
+    "bootswatch": "^5.3.8",
+    "firebase": "^12.8.0",
+>>>>>>> 9a20083b0cd33220d9cdbc0c15ec932eda73a841
     "lucide-react": "^0.562.0",
     "react": "^19.2.0",
     "react-bootstrap": "^2.10.10",
