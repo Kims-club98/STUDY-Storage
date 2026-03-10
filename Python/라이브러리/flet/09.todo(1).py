@@ -15,4 +15,4 @@ def main (page:ft.Page):
   def add_clicked(e):
     if todo_input.value != "":
       new_task = ft.Checkbox(label=todo_input.value)
-      tod
+    
