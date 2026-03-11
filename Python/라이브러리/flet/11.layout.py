@@ -4,7 +4,7 @@ def main(page: ft.Page):
   # 상단 title바
     page.title = "Flet 레이아웃 종합 공부방"
     # 다크모드(DARK), 일반모드 변경(LIGHT)
-    page.theme_mode = ft.ThemeMode.DARK
+    page.theme_mode = ft.ThemeMode.LIGHT
     # 좌/상 면과의 거리(숫자가 클수록 가운데로 감)
     page.padding = 20
 
